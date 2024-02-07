@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048c3a2e76e7b4e49a8244bb98c5a661, type: 3}
   m_Name: Item-
   m_EditorClassIdentifier: 
-  Guid: 2f8d43c5-8aea-4ca7-bd85-edab812ad439
+  Guid: 196b4a46-561b-47b3-ba6a-9ff6623f934e
   Name: 
   Icon: {fileID: 0}
   MaxStack: 1

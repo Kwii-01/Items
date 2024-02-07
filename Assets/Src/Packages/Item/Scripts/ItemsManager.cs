@@ -26,6 +26,8 @@ namespace Items {
         [SerializeField] private List<ItemSO> _items;
         private Dictionary<string, ItemSO> _itemDico;
 
+        public ItemUI ItemUIPrefab;
+
         public bool Has(ItemSO itemSO) {
             return this._items.Contains(itemSO);
         }
@@ -38,12 +40,10 @@ namespace Items {
             return this._itemDico.TryGetValue(guid, out itemSO);
         }
 
-        public void Add(ItemSO itemSO) {
-            this._itemDico[itemSO.Guid] = itemSO;
-        }
-
-        public void Remove(ItemSO itemSO) {
-            this._itemDico.Remove(itemSO.Guid);
+        public ItemUI CreateItemUI(Item item, Transform parent) {
+            ItemUI ui = Instantiate(ItemsManager.Instance.ItemUIPrefab, parent);
+            ui.Set(item);
+            return ui;
         }
     }
 }

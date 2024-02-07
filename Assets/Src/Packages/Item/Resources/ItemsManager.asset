@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: ItemsManager
   m_EditorClassIdentifier: 
   _items: []
+  ItemUIPrefab: {fileID: 1507650027195282645, guid: 39c58af376ae59746baf5b3622b59227,
+    type: 3}

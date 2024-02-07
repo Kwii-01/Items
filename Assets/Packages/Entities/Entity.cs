@@ -7,6 +7,7 @@ namespace Entities {
     [RequireComponent(typeof(StatBehaviour))]
     public class Entity : MonoBehaviour {
         [SerializeField] protected StatBehaviour statBehaviour;
+        public StatBehaviour Stats => this.statBehaviour;
         public Health health { get; private set; } = default;
 
         protected virtual void Awake() {

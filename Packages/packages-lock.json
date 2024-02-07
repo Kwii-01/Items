@@ -144,6 +144,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.zelude.minmaxslider": {
+      "version": "https://github.com/ayellowpaper/MinMaxSlider.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4217cc2ebe8d0baabf6dd10f8f3e76c7952fefc1"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

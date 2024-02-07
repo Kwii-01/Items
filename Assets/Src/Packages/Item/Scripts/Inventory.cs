@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 
 using SavingSystem;
+using System.Collections.ObjectModel;
 
 namespace Items {
     public class Inventory : MonoBehaviour {
@@ -13,13 +14,17 @@ namespace Items {
         [SerializeField] private ASaver _savingSystem;
         [SerializeField] private List<Item> _items = new List<Item>();
 
+
+        public ReadOnlyCollection<Item> Items;
+
         public event Action<Item, int> OnItemAdded;
         public event Action<Item, int> OnItemRemoved;
 
-        private void Start() {
+        private void Awake() {
             if (this._savingSystem.HasKey(this._saveKey) == false) {
                 this._items = this._savingSystem.LoadManyJson<string>(this._saveKey).Select(itemJson => Item.Unserialize(itemJson)).ToList();
             }
+            this.Items = new ReadOnlyCollection<Item>(this._items);
         }
 
         public void Reset() {
