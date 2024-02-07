@@ -11,16 +11,19 @@ using StatSystem;
 
 using UnityEngine;
 
+using Random = UnityEngine.Random;
+
 namespace Items {
     [Serializable]
     public class EquipmentBuilder : AItem {
-        [SerializeField] private RandomizedStatModifierBuilder[] _modifiers;
+        [SerializeField] private Vector2Int _statAmount;
+        [SerializeField] private LootTable<RandomizedStatModifierBuilder> _modifiersLootTable;
         public override AItem NewInstance() {
-            return new Equipment { Modifiers = this._modifiers.Select(m => m.Randomize()).ToArray() };
+            return new Equipment { Modifiers = this._modifiersLootTable.Get(Random.Range(this._statAmount.x, this._statAmount.y)).Select(m => m.Randomize()).ToArray() };
         }
 
         public override string Serialize() {
-            return this.NewInstance().Serialize();
+            throw new System.NotImplementedException();
         }
 
         public override AItem Unserialize(string json) {
