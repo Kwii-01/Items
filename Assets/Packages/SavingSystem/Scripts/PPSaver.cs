@@ -6,6 +6,7 @@ using System.Linq;
 
 using UnityEngine;
 
+// Save system using Player prefs
 namespace SavingSystem {
     [CreateAssetMenu(menuName = "SavingSystems/PlayerPrefs")]
     public class PPSaver : ASaver {
@@ -13,7 +14,7 @@ namespace SavingSystem {
         public override IEnumerable<T> LoadManyJson<T>(string key) => this.FromJsonArray<T>(this.LoadString(key)).AsEnumerable();
 
         public override void SaveJson<T>(string key, T data) => this.SaveString(key, this.ToJson(data));
-        public override void SaveJson<T>(string key, T[] data) => this.SaveString(key, this.ToJsonArray(data));
+        public override void SaveManyJson<T>(string key, T[] data) => this.SaveString(key, this.ToJsonArray(data));
 
         public override bool HasKey(string key) => PlayerPrefs.HasKey(key);
 

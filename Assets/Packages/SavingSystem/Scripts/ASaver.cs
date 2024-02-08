@@ -19,7 +19,7 @@ namespace SavingSystem {
         public abstract string LoadString(string key, string defaultValue = "");
 
         public abstract void SaveJson<T>(string key, T data);
-        public abstract void SaveJson<T>(string key, T[] data);
+        public abstract void SaveManyJson<T>(string key, T[] data);
 
         public abstract T LoadJson<T>(string key);
         public abstract IEnumerable<T> LoadManyJson<T>(string key);

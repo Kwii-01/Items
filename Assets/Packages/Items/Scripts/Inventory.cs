@@ -66,7 +66,7 @@ namespace Items {
         }
 
         public void Save() {
-            this._savingSystem.SaveJson(this._saveKey, this._items.Select(item => item.Serialize()).ToArray());
+            this._savingSystem.SaveManyJson(this._saveKey, this._items.Select(item => item.Serialize()).ToArray());
         }
 
 
