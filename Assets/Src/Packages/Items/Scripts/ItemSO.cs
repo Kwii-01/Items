@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEngine;
 
 namespace Items {
-    [CreateAssetMenu(menuName = "ItemSO", fileName = "Item-")]
+    [CreateAssetMenu(menuName = "Items/Item", fileName = "Item-")]
     public class ItemSO : ScriptableObject {
         public string Guid = System.Guid.NewGuid().ToString();
         public string Name;

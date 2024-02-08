@@ -28,6 +28,7 @@ namespace Items {
 
         public ItemUI ItemUIPrefab;
 
+
         public bool Has(ItemSO itemSO) {
             return this._items.Contains(itemSO);
         }
